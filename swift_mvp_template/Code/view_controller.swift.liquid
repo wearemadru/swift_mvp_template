@@ -1,0 +1,34 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+final class {{ module_info.name }}ViewController: BaseViewController, View {
+    // MARK: Constants
+
+    // MARK: IBOutlets
+
+    // MARK: Properties
+
+    var presenter: {{ module_info.name }}Presenter?
+
+    // MARK: LifeCycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presenter?.setupView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+
+    // MARK: Methods
+
+    // MARK: IBActions
+
+}
