@@ -13,7 +13,7 @@ protocol {{ module_info.name }}ViewProtocol: class {
 }
 
 protocol {{ module_info.name }}ViewPresenter: class {
-
+    init(with view: {{ module_info.name }}ViewProtocol)
 }
 
 final class {{ module_info.name }}Presenter: {{ module_info.name }}ViewPresenter {
@@ -25,6 +25,10 @@ final class {{ module_info.name }}Presenter: {{ module_info.name }}ViewPresenter
     weak var view: {{ module_info.name }}ViewProtocol?
     var router: {{ module_info.name }}Router?
 
+    init(with view: {{ module_info.name }}ViewProtocol) {
+        self.view = view
+    }
+    
     // MARK: Methods
     
 }
