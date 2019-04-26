@@ -6,11 +6,17 @@
 //  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-final class {{ module_info.name }}Configurator: Configurator {
-    func configure() -> {{ module_info.name }}ViewController {
-        return BaseConfigurator.configure({ (view, router, presenter) in
-        })
-    }
+final class {{ module_info.name }}Configurator {
+    
+    func configure() {
+        guard let view = UIStoryboard.instantiate(ofType: {{ module_info.name }}ViewController.self) else {
+            fatalError("Can't load viewController from storyboard")
+        }
+
+        let router = {{ module_info.name }}RouterImplementation(with: view)
+        let presenter = {{ module_info.name }}Presenter(with: view)
+        view.presenter = presenter
+    }  
 }
