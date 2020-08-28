@@ -19,7 +19,7 @@ final class {{ module_info.name }}RouterImplementation: {{module_info.name}}Rout
     weak var view: {{ module_info.name }}ViewController?
     weak var presenter: {{ module_info.name }}Presenter? 
     
-    init(with viewController: UIViewController) {
+    init(with viewController: {{ module_info.name }}UIViewController) {
         self.view = viewController
     }
     // MARK: Internal helpers
